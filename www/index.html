@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en" ng-app="balanceApp">
+<head>
+  <meta charset="utf-8">
+  <title>Balance Print</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/services.js"></script>
+</head>
+<body>
+
+  <div class="center-wrapper">
+    <ul class="menu clearfix" ng-controller="MainMenuCtrl">
+      <li class="{{menuItem.class}}" ng-repeat="menuItem in menuItems">
+        <a href="#{{menuItem.tab}}">{{menuItem.name}}</a>
+      </li>
+    </ul>
+    <div class="content-wrapper">
+      <div class="logo">
+        <a href="#">
+          <img src="img/logo.png" width="240" height="148" alt=""/>
+        </a>
+      </div>
+      <div class="tabs-wrapper">
+        <div id="home" class="clearfix">
+          <img class="fl-left" src="img/home-idea.png" height="486" width="399" alt=""/>
+          <div class="home-right-side">
+            <p>Типография <strong>Balance-Print</strong> - современное, стабильно работающее предприятие, зарекомендовавшее себя на рынке
+              полиграфических услуг, как надежный партнер. Наша команда профессиональных и прогрессивных сотрудников
+              трудится на Ваше благо для извлечения максимальных выгод от качествено изготовленной продукции по наилучшей
+              цене и в срок.</p>
+
+            <p>Собственная производственная база позволяет снизить себестоимость изготовляемой продукции.</p>
+
+            <p>Мы предлагаем следующие услуги:</p>
+            <ul>
+              <li>-разработка фирменного стиля;</li>
+              <li>-допечатная подготовка;</li>
+              <li>-офсетная печать;</li>
+              <li>-широкоформатная печать;</li>
+              <li>-цифровая печать;</li>
+              <li>-послепечатные процессы (УФ-лак, ламинация, гибридный лак, переплетные работы);</li>
+              <li>-сувенирная продукция.</li>
+            </ul>
+
+            <p><strong>Наша миссия:<br/>
+              честно и добросовестно работать на благо наших партнеров!</strong></p>
+          </div>
+        </div>
+
+        <div id="we-can" class="clearfix hidden-tab">
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/1.png" alt=""/>
+            <img class="hover" src="img/posobilities/1-hover.png" alt=""/>
+            <div class="tip">
+              Твердый переплет,
+              мягкий переплет,
+              кожаный переплет,
+              тираж от 1 до ....
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/2.png" alt=""/>
+            <img class="hover" src="img/posobilities/2-hover.png" alt=""/>
+            <div class="tip">
+              Настольные,
+              настенные,
+              квартальные,
+              карманные
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/3.png" alt=""/>
+            <img class="hover" src="img/posobilities/3-hover.png" alt=""/>
+            <div class="tip">
+              Упаковка
+              любой сложности,
+              картонная,
+              кашированная, гофрроящик.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/4.png" alt=""/>
+            <img class="hover" src="img/posobilities/4-hover.png" alt=""/>
+            <div class="tip">
+              Термопереплет,
+              скоба, евроскоба,
+              любое кол-во страниц,
+              гибридный лак,
+              УФ-лак
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/5.png" alt=""/>
+            <img class="hover" src="img/posobilities/5-hover.png" alt=""/>
+            <div class="tip">
+              Бренд-конверты всех
+              размеров и на любом
+              материале, так же
+              конверты под CD
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/6.png" alt=""/>
+            <img class="hover" src="img/posobilities/6-hover.png" alt=""/>
+            <div class="tip">
+              Хэнгеры различных
+              размеров, шелфтокеры,
+              воблеры, стопперы
+              на любых материалах
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/7.png" alt=""/>
+            <img class="hover" src="img/posobilities/7-hover.png" alt=""/>
+            <div class="tip">
+              Любых размеров,
+              термопереплет, пружина,
+              обложки любой
+              сложности
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/8.png" alt=""/>
+            <img class="hover" src="img/posobilities/8-hover.png" alt=""/>
+            <div class="tip">
+              Папки на любых
+              материалах,
+              цельновысечные,
+              с клеенным клапаном.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/9.png" alt=""/>
+            <img class="hover" src="img/posobilities/9-hover.png" alt=""/>
+            <div class="tip">
+              Шапки картонные
+              высечные брендовые,
+              текстильные с лого.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/10.png" alt=""/>
+            <img class="hover" src="img/posobilities/10-hover.png" alt=""/>
+            <div class="tip">
+              Пакеты бумажные
+              брендированные любого
+              размера, пакты ПЭТ,
+              майка и прочие.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/11.png" alt=""/>
+            <img class="hover" src="img/posobilities/11-hover.png" alt=""/>
+            <div class="tip">
+              Бирки любых
+              размеров с отверстиями,
+              на любых материалах.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/12.png" alt=""/>
+            <img class="hover" src="img/posobilities/12-hover.png" alt=""/>
+            <div class="tip">
+              Открытки различных
+              размеров и любой
+              сложности
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/13.png" alt=""/>
+            <img class="hover" src="img/posobilities/13-hover.png" alt=""/>
+            <div class="tip">
+              Буклеты всех
+              размеров, биговка,
+              фальцовка.
+              Доп. покрытия.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/14.png" alt=""/>
+            <img class="hover" src="img/posobilities/14-hover.png" alt=""/>
+            <div class="tip">
+              Скретч-карты на
+              пластике и псевдопластике
+              со скретч-покрытием.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/15.png" alt=""/>
+            <img class="hover" src="img/posobilities/15-hover.png" alt=""/>
+            <div class="tip">
+              Печать на блюбэк,
+              бэклайт, one way vision,
+              oracal.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/16.png" alt=""/>
+            <img class="hover" src="img/posobilities/16-hover.png" alt=""/>
+            <div class="tip">
+              Бланки любых
+              размеров на любых
+              материалах (самокопирка,
+              меловка, офсет).
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/17.png" alt=""/>
+            <img class="hover" src="img/posobilities/17-hover.png" alt=""/>
+            <div class="tip">
+              Этикета любых размеров
+              на различных материалах
+              (офсет, влагостойкая бумага, самоклейка)
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/18.png" alt=""/>
+            <img class="hover" src="img/posobilities/18-hover.png" alt=""/>
+            <div class="tip">
+              Листовки любых
+              размеров и на любом
+              материале. Фигурные,
+              прямоугольные.
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/19.png" alt=""/>
+            <img class="hover" src="img/posobilities/19-hover.png" alt=""/>
+            <div class="tip">
+              Наклейки любых
+              размеров для любых
+              носителей (металл,
+              пластик и пр.)
+            </div>
+          </div>
+          <div class="item fl-left">
+            <img class="default" src="img/posobilities/20.png" alt=""/>
+            <img class="hover" src="img/posobilities/20-hover.png" alt=""/>
+            <div class="tip">
+              Плакаты А1, А2, А3
+              на любых материалах
+            </div>
+          </div>
+        </div>
+
+        <div id="production" class="hidden-tab">
+          <div class="tabs-container-production clearfix">
+            <div id="before-print">
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/1.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>CtP Heidelberg
+                    Suprasetter 105</h3>
+                  <p>
+                    Производительность -
+                    35 пластин в час;
+                    Максимальный формат -
+                    930х1140 мм;
+                    Разрешение -  2540 dpi;
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/2.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Принтер для цветопроб
+                    Epson Stylus Pro 4900</h3>
+                  <p>
+                    11-цветный набор чернил;
+                    98% охват гаммы PANTONE;
+                    Печатающая головка Advanced-TFP
+                    Скорость печати 30 м. в час
+                    Спектрофотометр SpectroProofer
+                    Соответствие стандарту
+                    ENERGY STAR;
+                    Печать на носителях
+                    толщиной до 1,5 мм.
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/3.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Принтер Epson SureColor
+                    T7000</h3>
+                  <p>
+                    Чернила Epson UltraChrome XD – 5 картриджей с пигментными чернилами
+                    Печать на листовых и рулонных носителях шириной до 44 дюймов;
+                    Скорость печати – 28 сек/А1;
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+              <div class="img-wrapper fl-left">
+                <img src="img/production/4.jpg" alt=""/>
+              </div>
+              <div class="text">
+                <h3>Копировальная рама
+                  GRAFOPRINT SBD
+                </h3>
+                <p>
+                  Двухступенчатая система набора вакуума;
+                  Система засветки "быстрый запуск" с йодно-галиевой лампой 1 или 2КВт;
+                  Макс.размер изображения,
+                  1040х780 мм.
+                </p>
+              </div>
+            </div>
+            </div>
+            <div class="hidden-tab" id="print">
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/1-2.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Roland 300,  4 краски,
+                    520*740мм</h3>
+                  <p>
+                    4 красочная, область запечатки 510*740мм.
+                    Спиртовое увлажнение Rolandmatic.
+                    Пульт дистанционного управления красками RCI.
+                    Автоматическая регулировака подачи краски CCI.
+                    Устройство подачи нового типа.
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/2-2.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>HP Indigo PRESS 5500
+                    цифровой офсет</h3>
+                  <p>
+                    4 красочная, область запечатки 330x486 мм;
+                    Разрешение печати - 2438X2438 dpi;
+                    Производительность - 8000 отт./час;
+                    Система управления технологическим процессом с растровым процессором Harlequin с возможностью масштабирования.
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/3-2.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Heidelberg Speedmaster CD
+                    6 красок, 720*1020 мм
+                  </h3>
+                  <p>
+                    Функции Preset расширены - уменьшается необходимость настройки в ручную.
+                    Максимальный формат листа 720*1020 мм
+                    Максимальная запечатываемая поверхность 710*1020 мм
+                    Одельная лакировальная секция
+                    Пульт управления Prinect CP2000
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/4-2.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Roland Practica PRZ
+                  </h3>
+                  <p>
+                    2 красочная;
+                    область запечатки 510*380мм.;
+                    Спиртовое увлажнение Rolandmatic;
+                    Скорость печати - 10 000 отт./час;
+                    Возможность нумерации;
+                    2 печатные секции.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="hidden-tab" id="after-print">
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/1-3.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Тигельный пресс
+                    Vega ML 1040</h3>
+                  <p>
+                    Рабочая скорость - 23 лист/мин;
+                    Длина листа: 1040 мм;
+                    Ширина листа: 720 мм;
+                    Высечка;
+                    Подсечка;
+                    Перфорация;
+                    Биговка.
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/2-3.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Фальцевальная линия
+                    GUK K 54-6 KTL</h3>
+                  <p>
+                    40 000 листов в час;
+                    Макс. формат - 1040х740 мм;
+                    Плотность - от 40 г/м. до 300 г/м.кв.;
+                    6 поперечных и 2 продольных фальца.
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/3-3.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Wohlenberg Quickbinder</h3>
+                  <p>
+                    5 зажимовдля книжных блоков;
+                    Максимальный формат: 320×430 мм;
+                    Максимальная толщина: 70 мм.
+                    Максимальная скорость работы: 2000 книг/час;
+                    Точная дозировка клея.
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/4-3.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Шелкотрафаретная линия
+                    Argon eco 1040x720 мм
+                  </h3>
+                  <p>
+                    Макс. формат листа - 1040х720 мм.;
+                    УФ-лак выборочный и сплошной;
+                    Глиттер;
+                    Эффект песка, обьемный лак;
+                    Скрейтч покрытие;
+                    Секция сушки.
+                  </p>
+                </div>
+              </div>
+              <div class="product-item fl-left" style="width: 100%;">
+                <div class="img-wrapper fl-left">
+                  <img src="img/production/5-3.jpg" alt=""/>
+                </div>
+                <div class="text">
+                  <h3>Листоподборщик
+                    Horizon SPF-20A
+                  </h3>
+                  <p>
+                    20 лотков;
+                    Стабильный фальцаппарат с дополнительными прижимными валиками;
+                    Цветного сенсорный экран;
+                    Система контроля и окончания проволоки Horizon;
+                    Автоматическая отбраковка брошюр с дефектами;
+                    Память на 100 тиражей
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-links-production">
+            <a class="production-link active" href="#before-print">ДОПЕЧАТНОЕ</a>
+            <a class="production-link" href="#print">ПЕЧАТНОЕ</a>
+            <a class="production-link" href="#after-print">ПОСЛЕПЕЧАТНОЕ</a>
+          </div>
+        </div>
+
+        <div id="contacts" class="clearfix hidden-tab">
+          <div class="maps-container fl-left">
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+            <script>
+              var map;
+              function initialize() {
+                var myLatlng = new google.maps.LatLng(49.9920089,36.2561147);
+                var mapOptions = {
+                  zoom: 14,
+                  center: myLatlng,
+                  disableDefaultUI: true
+                }
+                var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+                var marker = new google.maps.Marker({
+                  position: myLatlng,
+                  map: map,
+                  icon: 'img/pin.png'
+                });
+              }
+
+              google.maps.event.addDomListener(window, 'load', initialize);
+
+            </script>
+            <div id="map-canvas"></div>
+          </div>
+          <div class="contacts-right-side">
+            <div class="heading">
+              <strong>Главный офис:</strong>
+            </div>
+
+            61050, г. Харьков.<br/>
+            ул. Куйбышева, 9, оф. 14<br/>
+            тел.: +38 (057) 714-20-30;<br/>
+            моб.: +38 (099) 922-96-99;<br/>
+            +38 (063) 446-81-00;<br/>
+            e-mail: balanceprint@mail.ru<br/>
+            www.balanceprint.com
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="copy-text">
+      &copy; All rights reserved. Balance-print. 2015
+    </div>
+  </div>
+
+</body>
+</html>
